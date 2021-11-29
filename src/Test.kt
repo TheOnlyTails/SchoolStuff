@@ -8,16 +8,18 @@ infix fun <A, B, C> Pair<A, B>.to(that: C) = Triple(this.first, this.second, tha
 infix fun <A, B, C, D> Triple<A, B, C>.to(that: D) = Quad(this.first, this.second, this.third, that)
 class TestFailedException(message: String) : Exception(message)
 
-fun <T> String.makeTest(param: T, result: Boolean = true, f: (T) -> Boolean) =
-	Quad(this, f, param, result)
+fun <T> String.makeTest(param: T, f: (T) -> Boolean) =
+	Quad(this, f, param, !this.endsWith("false"))
 
 val tests = arrayOf(
-	"digit count by parity - true".makeTest(4141) { digitCountByParityEqual(it) },
-	"digit count by parity - false".makeTest(41414, false) { digitCountByParityEqual(it) },
-	"ones digit appears only one - true".makeTest(4361) { isOnesDigitUnique(it) },
+	"digit count by parity".makeTest(4141) { digitCountByParityEqual(it) },
+	"digit count by parity - false".makeTest(41414) { digitCountByParityEqual(it) },
+	"ones digit appears only one".makeTest(4361) { isOnesDigitUnique(it) },
 	"ones digit appears only one - false".makeTest(1361) { isOnesDigitUnique(it) },
-	"ones digit appears only one - true".makeTest(4361) { isSortedDescendingStep1(it) },
-	"ones digit appears only one - false".makeTest(1361) { isSortedDescendingStep1(it) },
+	"digits sorted from high to low with step size 1".makeTest(8765) { isSortedDescendingStep1(it) },
+	"digits sorted from high to low with step size 1 - false".makeTest(9765) { isSortedDescendingStep1(it) },
+	"digits only go up or down 1".makeTest(876565434) { isStep1BothDirs(it) },
+	"digits only go up or down 1 - false".makeTest(876515484) { isStep1BothDirs(it) },
 )
 
 fun main() {
@@ -27,4 +29,6 @@ fun main() {
 			false -> throw TestFailedException("Test failed: $name ($param) != $expected")
 		}
 	}
+
+	println("Al!l tests passed")
 }
