@@ -4,10 +4,6 @@ import Nov29.*
 
 data class Quad<A, B, C, D>(val first: A, val second: B, val third: C, val fourth: D)
 
-infix fun <A, B, C> Pair<A, B>.to(that: C) = Triple(this.first, this.second, that)
-infix fun <A, B, C, D> Triple<A, B, C>.to(that: D) = Quad(this.first, this.second, this.third, that)
-class TestFailedException(message: String) : Exception(message)
-
 fun <T> String.makeTest(param: T, f: (T) -> Boolean) =
 	Quad(this, f, param, !this.endsWith("false"))
 
@@ -26,7 +22,7 @@ fun main() {
 	tests.forEach { (name, f, param, expected) ->
 		when (f(param) == expected) {
 			true -> println("Test passed: $name ($param)")
-			false -> throw TestFailedException("Test failed: $name ($param) != $expected")
+			false -> println("ERROR: Test failed - $name ($param) != $expected")
 		}
 	}
 

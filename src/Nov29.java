@@ -71,6 +71,7 @@ public class Nov29 {
             int digit = n % 10;
 
             // check if the digit is smaller than the last one
+            // Math.abs(x) מחזיר ערך מוחלט
             if (Math.abs(digit - last) != 1) return false;
 
             // remove the last digit
