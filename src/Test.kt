@@ -1,30 +1,51 @@
-package november.twentynine
-
+import Dec08.*
 import Nov29.*
+import org.junit.jupiter.api.Test;
 
-data class Quad<A, B, C, D>(val first: A, val second: B, val third: C, val fourth: D)
+import org.junit.jupiter.api.Assertions.*;
 
-fun <T> String.makeTest(param: T, f: (T) -> Boolean) =
-	Quad(this, f, param, !this.endsWith("false"))
+class Test {
+    @Test
+    fun `digit count by parity`() {
+        assertTrue(digitCountByParityEqual(4141))
+        assertFalse(digitCountByParityEqual(41414))
+    }
 
-val tests = arrayOf(
-	"digit count by parity".makeTest(4141) { digitCountByParityEqual(it) },
-	"digit count by parity - false".makeTest(41414) { digitCountByParityEqual(it) },
-	"ones digit appears only one".makeTest(4361) { isOnesDigitUnique(it) },
-	"ones digit appears only one - false".makeTest(1361) { isOnesDigitUnique(it) },
-	"digits sorted from high to low with step size 1".makeTest(8765) { isSortedDescendingStep1(it) },
-	"digits sorted from high to low with step size 1 - false".makeTest(9765) { isSortedDescendingStep1(it) },
-	"digits only go up or down 1".makeTest(876565434) { isStep1BothDirs(it) },
-	"digits only go up or down 1 - false".makeTest(876515484) { isStep1BothDirs(it) },
-)
+    @Test
+    fun `ones digit appears only once`() {
+        assertTrue(isOnesDigitUnique(4361))
+        assertFalse(isOnesDigitUnique(1361))
+    }
 
-fun main() {
-	tests.forEach { (name, f, param, expected) ->
-		when (f(param) == expected) {
-			true -> println("Test passed: $name ($param)")
-			false -> println("ERROR: Test failed - $name ($param) != $expected")
-		}
-	}
+    @Test
+    fun `digits sorted from high to low with step size 1`() {
+        assertTrue(isSortedDescendingStep1(8765))
+        assertFalse(isSortedDescendingStep1(9765))
+    }
 
-	println("Al!l tests passed")
+    @Test
+    fun `digits only go up or down 1`() {
+        assertTrue(isStep1BothDirs(876565434))
+        assertFalse(isStep1BothDirs(876515484))
+    }
+
+    @Test
+    fun `calculate city tax`() {
+        assertEquals(calculateCityTax(37.0, 2, 1), 5350.0)
+        assertNotEquals(calculateCityTax(37.0, 3, 1), 5350.0)
+        assertNotEquals(calculateCityTax(37.0, 2, 4), 5350.0)
+        assertNotEquals(calculateCityTax(137.0, 2, 1), 5350.0)
+    }
+
+    @Test
+    fun `get leftmost digit`() {
+        assertEquals(getLeftmostDigit(4357), 4)
+        assertNotEquals(getLeftmostDigit(4357), 7)
+    }
+
+    @Test
+    fun `are end digits equal`() {
+        assertTrue(areEndDigitsEqual(459, 9231))
+        assertFalse(areEndDigitsEqual(437, 9231))
+    }
 }
