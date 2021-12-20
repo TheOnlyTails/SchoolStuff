@@ -13,13 +13,18 @@ public class Dec20 {
 
             int salary = 0;
 
-            for (int j = 1; j <= 5; j++) {
-                System.out.print("Enter hours worked: ");
-                int hours = scanner.nextInt();
+            // שיטת הזקיף
+            // allow to enter a variable amount of days
+            System.out.print("Enter hours worked: ");
+            int hours = scanner.nextInt();
 
+            while (hours > -1) {
                 if (hours < 5) System.out.println("Lazy!");
 
                 salary = salary + (wage * hours);
+
+                System.out.print("Enter hours worked: ");
+                hours = scanner.nextInt();
             }
 
             System.out.println("Salary for worker ID " + id + " is: " + salary);
