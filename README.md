@@ -7,3 +7,4 @@
 |  29/11  |    פעולות    | [Nov29.java](/src/Nov29.java) |
 |  08/12  |    פעולות    | [Dec08.java](/src/Dec08.java) |
 |  15/12  | קינון לולאות | [Dec15.java](/src/Dec15.java) |
+|  20/12  | קינון לולאות | [Dec20.java](/src/Dec20.java) |
