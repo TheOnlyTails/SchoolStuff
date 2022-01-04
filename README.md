@@ -10,3 +10,4 @@
 | 20/12 |   קינון לולאות   | [Dec20.java](/src/Dec20.java) |
 | 27/12 |  פעולות ולולאות  | [Dec27.java](/src/Dec27.java) |
 | 29/12 | מספרים רנדומליים | [Dec29.java](/src/Dec29.java) |
+| 03/01 |      פעולות      | [Jan03.java](/src/Jan03.java) |

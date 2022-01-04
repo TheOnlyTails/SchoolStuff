@@ -3,6 +3,8 @@
 import Dec08.*
 import Dec27.areOuterAndInnerDigitSumsEqual
 import Dec27.isParityAlternating
+import Jan03.isHershard
+import Jan03.isMoran
 import Nov29.*
 import org.junit.jupiter.api.Assertions.*
 import org.junit.jupiter.api.Test
@@ -68,5 +70,20 @@ class Test {
 		assertTrue(areOuterAndInnerDigitSumsEqual(2222))
 		assertFalse(areOuterAndInnerDigitSumsEqual(1221))
 		assertFalse(areOuterAndInnerDigitSumsEqual(1211))
+	}
+
+	@Test
+	fun `is number hershard's number`() {
+		assertTrue(isHershard(2022))
+		assertTrue(isHershard(2220))
+		assertFalse(isHershard(2222))
+	}
+
+	@Test
+	fun `is number moran's number`() {
+		assertTrue(isMoran(2022))
+		assertTrue(isMoran(1233))
+		assertFalse(isMoran(1234))
+		assertFalse(isMoran(1235))
 	}
 }
