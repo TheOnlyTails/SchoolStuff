@@ -5,6 +5,8 @@ import Dec27.areOuterAndInnerDigitSumsEqual
 import Dec27.isParityAlternating
 import Jan03.isHershard
 import Jan03.isMoran
+import Jan10.canDivideByAllDigits
+import Jan10.isAbsoluteDifference1
 import Nov29.*
 import org.junit.jupiter.api.Assertions.*
 import org.junit.jupiter.api.Test
@@ -85,5 +87,21 @@ class Test {
 		assertTrue(isMoran(1233))
 		assertFalse(isMoran(1234))
 		assertFalse(isMoran(1235))
+	}
+
+	@Test
+	fun `is the absolute difference between each digit 1`() {
+		assertTrue(isAbsoluteDifference1(1234))
+		assertTrue(isAbsoluteDifference1(12123432))
+		assertFalse(isAbsoluteDifference1(12123431))
+		assertFalse(isAbsoluteDifference1(12123433))
+	}
+
+	@Test
+	fun `does the number divide evenly by all its digits`() {
+		assertTrue(canDivideByAllDigits(224))
+		assertTrue(canDivideByAllDigits(126))
+		assertFalse(canDivideByAllDigits(1234))
+		assertFalse(canDivideByAllDigits(127))
 	}
 }
