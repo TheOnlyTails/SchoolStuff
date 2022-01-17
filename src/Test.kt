@@ -7,6 +7,7 @@ import Jan03.isHershard
 import Jan03.isMoran
 import Jan10.canDivideByAllDigits
 import Jan10.isAbsoluteDifference1
+import Jan17.*
 import Nov29.*
 import org.junit.jupiter.api.Assertions.*
 import org.junit.jupiter.api.Test
@@ -38,16 +39,16 @@ class Test {
 
 	@Test
 	fun `calculate city tax`() {
-		assertEquals(calculateCityTax(37.0, 2, 1), 5350.0)
-		assertNotEquals(calculateCityTax(37.0, 3, 1), 5350.0)
-		assertNotEquals(calculateCityTax(37.0, 2, 4), 5350.0)
-		assertNotEquals(calculateCityTax(137.0, 2, 1), 5350.0)
+		assertEquals(5350.0, calculateCityTax(37.0, 2, 1))
+		assertNotEquals(5350.0, calculateCityTax(37.0, 3, 1))
+		assertNotEquals(5350.0, calculateCityTax(37.0, 2, 4))
+		assertNotEquals(5350.0, calculateCityTax(137.0, 2, 1))
 	}
 
 	@Test
 	fun `get leftmost digit`() {
-		assertEquals(getLeftmostDigit(4357), 4)
-		assertNotEquals(getLeftmostDigit(4357), 7)
+		assertEquals(4, getLeftmostDigit(4357))
+		assertNotEquals(7, getLeftmostDigit(4357))
 	}
 
 	@Test
@@ -103,5 +104,26 @@ class Test {
 		assertTrue(canDivideByAllDigits(126))
 		assertFalse(canDivideByAllDigits(1234))
 		assertFalse(canDivideByAllDigits(127))
+	}
+
+	@Test
+	fun `get biggest number in the array`() {
+		val arr = intArrayOf(346, 188, 918, 134, 714)
+		assertEquals(918, max(arr))
+		assertNotEquals(919, max(arr))
+	}
+
+	@Test
+	fun `is element in array`() {
+		val arr = intArrayOf(346, 188, 918, 134, 714)
+		assertTrue(contains(arr, 918))
+		assertFalse(contains(arr, 919))
+	}
+
+	@Test
+	fun `how many times does the number appear in the array`() {
+		val arr = intArrayOf(346, 188, 918, 134, 714, 918)
+		assertEquals(2, count(arr, 918))
+		assertNotEquals(3, count(arr, 918))
 	}
 }
