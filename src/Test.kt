@@ -8,6 +8,9 @@ import Jan03.isMoran
 import Jan10.canDivideByAllDigits
 import Jan10.isAbsoluteDifference1
 import Jan17.*
+import Jan19.areArraysEqual
+import Jan19.biggestDigitSum
+import Jan26.containsPalindrome
 import Nov29.*
 import org.junit.jupiter.api.Assertions.*
 import org.junit.jupiter.api.Test
