@@ -8,6 +8,7 @@ import Jan03.isMoran
 import Jan10.canDivideByAllDigits
 import Jan10.isAbsoluteDifference1
 import Jan17.*
+import Jan26.containsPalindrome
 import Nov29.*
 import org.junit.jupiter.api.Assertions.*
 import org.junit.jupiter.api.Test
@@ -125,5 +126,11 @@ class Test {
 		val arr = intArrayOf(346, 188, 918, 134, 714, 918)
 		assertEquals(2, count(arr, 918))
 		assertNotEquals(3, count(arr, 918))
+	}
+
+	@Test
+	fun `does the array contains a palindrome`() {
+		val arr = intArrayOf(907121709)
+		assertTrue(containsPalindrome(arr))
 	}
 }
