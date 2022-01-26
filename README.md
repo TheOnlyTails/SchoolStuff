@@ -14,4 +14,5 @@
 | 05/01 |     אין נושא     | [Jan05.java](/src/Jan05.java) |
 | 10/01 |     אין נושא     | [Jan10.java](/src/Jan10.java) | 
 | 17/01 |      מערכים      | [Jan17.java](/src/Jan17.java) |
+| 19/01 |      מערכים      | [Jan19.java](/src/Jan19.java) |
 | 26/01 |      מערכים      | [Jan26.java](/src/Jan26.java) |

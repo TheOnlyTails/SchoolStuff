@@ -8,7 +8,6 @@ import Jan03.isMoran
 import Jan10.canDivideByAllDigits
 import Jan10.isAbsoluteDifference1
 import Jan17.*
-import Jan26.containsPalindrome
 import Nov29.*
 import org.junit.jupiter.api.Assertions.*
 import org.junit.jupiter.api.Test
@@ -126,6 +125,23 @@ class Test {
 		val arr = intArrayOf(346, 188, 918, 134, 714, 918)
 		assertEquals(2, count(arr, 918))
 		assertNotEquals(3, count(arr, 918))
+	}
+
+	@Test
+	fun `find the array element with the biggest sum of its digits`() {
+		val arr = intArrayOf(312, 417, 356, 323, 855)
+		assertEquals(855, biggestDigitSum(arr))
+		assertNotEquals(854, biggestDigitSum(arr))
+	}
+
+	@Test
+	fun `check if two arrays are equal`() {
+		val arr1 = intArrayOf(830, 847, 523, 621, 588)
+		val arr2 = intArrayOf(661, 220, 197, 299, 259)
+		assertTrue(areArraysEqual(arr1, arr1))
+		assertTrue(areArraysEqual(arr2, arr2))
+		assertFalse(areArraysEqual(arr1, arr2))
+		assertFalse(areArraysEqual(arr2, arr1))
 	}
 
 	@Test
