@@ -3,6 +3,7 @@
 import Dec08.*
 import Dec27.areOuterAndInnerDigitSumsEqual
 import Dec27.isParityAlternating
+import Feb07.cycleRight
 import Jan03.isHershard
 import Jan03.isMoran
 import Jan10.canDivideByAllDigits
@@ -172,5 +173,16 @@ class Test {
     fun `check if an array's elements contains all digits`() {
         assertTrue(containsAllDigits(intArrayOf(1234, 5678, 90)))
         assertFalse(containsAllDigits(intArrayOf(1234, 578, 90)))
+    }
+
+    @Test
+    fun `cycle an array to the right`() {
+        val arr = intArrayOf(1, 2, 3, 4, 5)
+        assertArrayEquals(intArrayOf(5, 1, 2, 3, 4), cycleRight(arr))
+        assertNotEquals(intArrayOf(2, 3, 4, 5, 1), cycleRight(arr))
+
+        val arr2 = intArrayOf(420, 87, 149, 23, 699)
+        assertArrayEquals(intArrayOf(699, 420, 87, 149, 23), cycleRight(arr2))
+        assertNotEquals(intArrayOf(87, 149, 23, 699, 420), cycleRight(arr2))
     }
 }
