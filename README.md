@@ -19,3 +19,4 @@
 | 31/01 |      מערכים       | [Jan31.java](/src/Jan31.java) |
 | 07/02 |      מערכים       | [Feb07.java](/src/Feb07.java) |
 | 09/02 | מערכים רב מימדיים | [Feb09.java](/src/Feb09.java) |
+| 14/02 | מערכים רב מימדיים | [Feb09.java](/src/Feb14.java) |
